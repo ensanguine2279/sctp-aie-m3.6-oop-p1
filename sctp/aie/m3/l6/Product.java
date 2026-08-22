@@ -85,6 +85,10 @@ public class Product {
                 + stockQuantity + "]";
     }
 
+    public String toHashCodeString() {
+        return getClass().getName() + "@" + Integer.toHexString(System.identityHashCode(this));
+    }
+
     public static void main(String[] args) {
         Product pdtAllParameters = new Product("1234", "Laptop", 999.99, 10);
         Product pdtWithoutQty = new Product("5678", "Smartphone", 499.99);
@@ -98,6 +102,6 @@ public class Product {
         System.out.println("Copied product: " + pdtCopy);
         System.out.println("Are the original and copied products equal? " + pdtAllParameters.equals(pdtCopy));
         System.out.println("Hash code of original product and copied product: "
-                + System.identityHashCode(pdtAllParameters) + " and " + System.identityHashCode(pdtCopy));
+                + pdtAllParameters.toHashCodeString() + " and " + pdtCopy.toHashCodeString());
     }
 }
