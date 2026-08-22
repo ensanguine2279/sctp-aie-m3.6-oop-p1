@@ -68,15 +68,20 @@ public class Product {
     }
 
     public void setPrice(double price) {
-
         if (price >= 0) {
             this.price = price;
+        } else {
+            System.out.println("Price cannot be negative. Setting price to 0.");
+            this.price = 0;
         }
     }
 
     public void setStockQuantity(int stockQuantity) {
         if (stockQuantity >= 0) {
             this.stockQuantity = stockQuantity;
+        } else {
+            System.out.println("Stock quantity cannot be negative. Setting stock quantity to 0.");
+            this.stockQuantity = 0;
         }
     }
 
